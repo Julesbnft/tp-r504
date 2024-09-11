@@ -23,3 +23,9 @@ jobs:
         run: |
           pytest TP1/test.py
 
+      - name: Display branch name
+        run: echo "Nom branche : ${{ github.ref }}"
+
+      - name: Display OS version
+        run: echo "OS version : ${{ runner.os }}"
+
