@@ -8,7 +8,7 @@ jobs:
     strategy:
       matrix:
         python-version: [ '3.8', '3.10' ]
-    
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -35,4 +35,5 @@ jobs:
 
       - name: Display OS version
         run: echo "OS version : ${{ runner.os }}"
+
 
