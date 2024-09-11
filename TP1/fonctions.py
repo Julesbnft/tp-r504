@@ -1,6 +1,16 @@
 def puissance(a, b):
-    """Renvoie a élevé à la puissance b, si a et b sont des entiers."""
+    # Vérifier que a et b sont des entiers
     if not isinstance(a, int) or not isinstance(b, int):
         raise TypeError("Only integers are allowed")
-    return a ** b
 
+    result = 1
+    # Gérer les puissances négatives
+    if b < 0:
+        a = 1 / a
+        b = -b
+    
+    # Calcul de a^b avec une boucle for
+    for _ in range(b):
+        result *= a
+    
+    return result
