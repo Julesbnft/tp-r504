@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  nginx:
+    build: ./nginx
+    ports:
+      - "80:80"
+
+  app1:
+    build: ./app1
+
+  app2:
+    build: ./app2
