@@ -1,0 +1,7 @@
+echo "<h1>Hello 1</h1>" > shared1/index.html
+echo "<h1>Hello 2</h1>" > shared2/index.html
+
+
+
+
+

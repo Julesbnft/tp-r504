@@ -1,0 +1,1 @@
+echo "Flask>=2.2.2" > TP_LB/tp-C/appli/requirements.txt
