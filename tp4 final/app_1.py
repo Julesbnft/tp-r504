@@ -3,7 +3,7 @@ import re
 
 app = Flask(__name__)
 
-# Validation de l'identifiant avec des regex
+# MySQL configuration
 def validate_username(username):
     errors = []
 
@@ -24,7 +24,7 @@ def validate_username(username):
 
     return errors
 
-# Page principale pour le formulaire
+# Initialize MySQL connection
 @app.route('/newuser/', methods=['GET', 'POST'])
 def newuser():
     message = None
@@ -33,7 +33,7 @@ def newuser():
         errors = validate_username(username)
         
         if not errors:
-            message = f"Identifiant '{username}' valide. 🎉"
+            message = f"Identifiant '{username}' valide. "
         else:
             message = "Erreurs :<br>" + "<br>".join(errors)
 
