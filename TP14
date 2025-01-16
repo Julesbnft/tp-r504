@@ -1,0 +1,28 @@
+nano rech.sh
+
+#!/bin/bash
+
+# Définir un seuil de CVE critique
+SEUIL=10
+
+# Exécuter debsecan et compter les CVE
+CVE_COUNT=$(debsecan --suite bookworm | wc -l)
+
+# Historiser les résultats
+echo "$(date): $CVE_COUNT CVE détectées" >> /var/log/debsecan.log
+
+# Envoyer une alerte si le seuil est dépassé
+if [ "$CVE_COUNT" -gt "$SEUIL" ]; then
+    echo "Attention : $CVE_COUNT CVE détectées, seuil de $SEUIL dépassé." | mail -s "Alerte CVE" admin@votre-domaine.com
+fi
+
+
+
+
+
+nano prog.sh
+
+#!/bin/bash
+
+# Ajouter la tâche cron pour exécuter le script rech.sh
+echo "30 2 * * * /home/jules/rech.sh" | crontab -
