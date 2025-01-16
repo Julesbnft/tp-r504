@@ -26,3 +26,17 @@ nano prog.sh
 
 # Ajouter la tâche cron pour exécuter le script rech.sh
 echo "30 2 * * * /home/jules/rech.sh" | crontab -
+
+
+
+
+
+nano ~/demoaa
+
+#!/bin/bash
+echo "This is an AppArmor example."
+touch sample.txt
+echo "File created"
+rm sample.txt
+echo "File deleted"
+
